@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agastya Pandey | Digital Business Professional</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #6D4C41;  /* Deep brown */
+            --secondary: #FFD700; /* Gold */
+            --accent: #FF9EB5;    /* Soft pink */
+            --light: #FFF8F0;     /* Cream */
+            --dark: #3E2723;      /* Dark brown */
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.05)" d="M0,0 L100,0 L100,100 Q50,80 0,100 Z"></path></svg>');
+            background-size: cover;
+            opacity: 0.3;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        /* Main Content */
+        main {
+            padding: 3rem 0;
+        }
+        
+        section {
+            margin-bottom: 3rem;
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        section::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
+        }
+        
+        h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        h2::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary);
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .card {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .card h3 i {
+            color: var(--secondary);
+        }
+        
+        .date {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+        
+        .skill {
+            background: var(--accent);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .interests-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        
+        .interest {
+            text-align: center;
+            flex: 1;
+            min-width: 100px;
+        }
+        
+        .interest i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            background: var(--secondary);
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: 0 auto 0.5rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--secondary);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content container">
+            <h1>Agastya Bhaskar Dev Pandey</h1>
+            <p class="tagline">BBA in Digital Business & Economics | IIM Bangalore</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>agastyapandey71224@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Chhatarpur, Madhya Pradesh</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>7470338803</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        <section id="education">
+            <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3><i class="fas fa-university"></i> Indian Institute of Management Bangalore</h3>
+                    <p class="date">2023 - Present</p>
+                    <p>BBA in Digital Business & Economics</p>
+                    <p>Roll No.: 24120090</p>
+                    <p><strong>Relevant Coursework:</strong> Microeconomics, Statistics for Management, Persuasive Communication</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="skills">
+            <h2><i class="fas fa-code"></i> Skills</h2>
+            <div class="skills-container">
+                <span class="skill">Leadership</span>
+                <span class="skill">Teamwork</span>
+                <span class="skill">Critical Thinking</span>
+                <span class="skill">Communication</span>
+                <span class="skill">Public Speaking</span>
+                <span class="skill">Data Analysis</span>
+                <span class="skill">Creative Problem Solving</span>
+            </div>
+        </section>
+        
+        <section id="experience">
+            <h2><i class="fas fa-briefcase"></i> Experience & Achievements</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3><i class="fas fa-users"></i> Team Leader Interview Candidate</h3>
+                    <p class="date">YOUNITY</p>
+                    <p>Evaluated for leadership potential in collaborative problem-solving scenarios.</p>
+                </div>
+                <div class="card">
+                    <h3><i class="fas fa-chart-line"></i> Inside Sales Executive Interviewee</h3>
+                    <p class="date">VelocityOS Pvt. Ltd.</p>
+                    <p>Demonstrated sales acumen and client engagement strategies.</p>
+                </div>
+                <div class="card">
+                    <h3><i class="fas fa-trophy"></i> Silver Eagles Representative</h3>
+                    <p class="date">IIM Bangalore</p>
+                    <p>Represented Madhya Pradesh in inter-college events, contributing to team strategy and performance.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="projects">
+            <h2><i class="fas fa-project-diagram"></i> Projects & Certifications</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3><i class="fas fa-music"></i> Double-Flow Rap Anthem</h3>
+                    <p>Composing a musical piece blending creativity and teamwork for the Silver Eagles.</p>
+                </div>
+                <div class="card">
+                    <h3><i class="fas fa-certificate"></i> Academic Modules</h3>
+                    <p>Completed certifications in Microeconomics, Statistics for Management, and Persuasive Communication.</p>
+                </div>
+                <div class="card">
+                    <h3><i class="fas fa-flask"></i> NEET 2025 Aspirant</h3>
+                    <p>Focused preparation in Chemistry & Physics, demonstrating self-driven discipline.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="interests">
+            <h2><i class="fas fa-heart"></i> Interests</h2>
+            <div class="interests-container">
+                <div class="interest">
+                    <i class="fas fa-guitar"></i>
+                    <p>Playing Guitar</p>
+                </div>
+                <div class="interest">
+                    <i class="fas fa-microphone"></i>
+                    <p>Singing</p>
+                </div>
+                <div class="interest">
+                    <i class="fas fa-comments"></i>
+                    <p>Public Speaking</p>
+                </div>
+                <div class="interest">
+                    <i class="fas fa-gamepad"></i>
+                    <p>Snooker</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <h3>Let's Connect</h3>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="mailto:agastyapandey71224@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p>&copy; 2023 Agastya Pandey. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Simple animation for cards when they come into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.card').forEach(card => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
